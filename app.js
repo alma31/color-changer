@@ -1,8 +1,10 @@
 (function(){
 	"use strict";
 	var app = {
-
-		red: 
+		r:0,
+		g:0,
+		b:0,
+		a:0,
 
 		init:function(){
 			app.listerners();
@@ -16,23 +18,36 @@
 		},
 
 		red: function(){
-			var r = $('#R').val();
-			
+			app.r = $('#R').val();
+			app.couleur();
+		
+
+
 		},
 
 		green: function(){
-			console.log('teste');
+			app.g = $('#G').val();
+			app.couleur();
+
+			
 		},
 
 		blue: function(){
-			console.log('teste');
+			app.b = $('#B').val();
+			app.couleur();
 
 		},
 
 		alpha: function(){
+			app.a = $('#A').val();
+			app.couleur();
 			
 		},
-	};
+
+		couleur: function(){
+			$('body').css("background-color", "rgb("+app.r+","+app.g+","+app.b+""+app.a+")");
+		}
+	}
 
 
 	$(document).ready(function(){
